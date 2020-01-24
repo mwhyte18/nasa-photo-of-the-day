@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import ImageOfTheDay from "./ImageOfTheDay";
 import TextData from "./TextData";
 import axios from "axios";
+import { Alert } from 'reactstrap';
+
 function formatDate(date) {
     var d = new Date(date),
         month = '' + (d.getMonth() + 1),
@@ -27,11 +29,20 @@ export default function NasaData() {
         setDate(yesterday);
     }
     const increaseDate = () => {
+        
         console.log(formatDate(date));
         var tomorrow = new Date();
+        var checkIfToday = new Date();
         var currentDate = new Date(date);
         tomorrow.setDate(currentDate.getDate() + 1);
-        setDate(tomorrow);
+        console.log(checkIfToday)
+        console.log(currentDate)
+        if(checkIfToday.getDay() === currentDate.getDay()){
+            alert("Tomorrows Picture isn't available yet, come back tomorrow!");
+        }
+        else{
+            setDate(tomorrow);
+        }
     }        
  
     useEffect(() => {
