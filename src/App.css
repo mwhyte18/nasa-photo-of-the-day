@@ -1,7 +1,10 @@
 .App {
   text-align: center;
 }
-
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -31,3 +34,22 @@
     transform: rotate(360deg);
   }
 }
+img{
+  width:100%;
+}
+.headerContainer{
+  background-image: url(components/image.png);
+  padding-bottom: 3%;
+  padding-top: 3%;
+  display:flex;
+  flex-direction: column;
+  Color: white;
+  align-items: center;
+  
+}
+@media (max-width: 600px) {
+  .headerContainer{
+  padding-left: 7%;
+  padding-right: 7%;
+  }
+  }
